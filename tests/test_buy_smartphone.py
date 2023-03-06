@@ -6,7 +6,7 @@ from pages.main_page import Main_page
 CHROMEDRIVE_PATH = "utils/chromedriver.exe"
 
 
-def test_buy_smartphone():
+def test_buy_smartphone(set_group, set_up):
     options = webdriver.ChromeOptions()
     options.add_argument('--ignore-certificate-errors')
     options.add_argument('--ignore-ssl-errors')
@@ -17,3 +17,5 @@ def test_buy_smartphone():
 
     main_page = Main_page(driver)
     main_page.select_smartphone()
+
+    # driver.quit()
