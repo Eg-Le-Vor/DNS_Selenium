@@ -12,7 +12,7 @@ class Base():
 
     def get_current_url(self):
         get_url = self.driver.current_url
-        print(f'Текущий URL: {get_url}.', end=' ')
+        print(f'\nТекущий URL: {get_url}.', end=' ')
         
 
     """Метод проверки URL"""
