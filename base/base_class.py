@@ -30,3 +30,12 @@ class Base():
         screenshot_name = "screenshot" + now_date + ".png"
         self.driver.save_screenshot(f'../screenshots/{screenshot_name}')
         print('Скриншот текущей страницы сохранён.')
+
+
+    """Метод полной прогрузки страницы"""
+
+    def load_page(self):
+        counter = 100
+        for _ in range(50):
+            self.driver.execute_script(f'window.scrollTo(0, {counter})')
+            counter += 200

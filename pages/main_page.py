@@ -4,23 +4,23 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
+"""Локаторы"""
+
+SMARTPHONES_PHOTOTECHNICS_BUTTON_LOCATOR = "//a[@href='/catalog/17a890dc16404e77/smartfony-i-fototexnika/'][@class='catalog-menu__root-item-info catalog-menu__root-item-title']"
+
+
 class Main_page(Base):
 
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
         self.url = "https://www.dns-shop.ru/"
-    
-
-    """Локаторы"""
-
-    smartphones_phototechnics_button_locator = "//a[@href='/catalog/17a890dc16404e77/smartfony-i-fototexnika/'][@class='catalog-menu__root-item-info catalog-menu__root-item-title']"
 
 
     """Геттеры"""
 
     def get_smartphones_phototechnics_button(self):
-        return WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, self.smartphones_phototechnics_button_locator)))
+        return WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, SMARTPHONES_PHOTOTECHNICS_BUTTON_LOCATOR)))
 
 
     """Действия"""

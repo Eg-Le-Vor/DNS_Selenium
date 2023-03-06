@@ -3,12 +3,13 @@ from selenium.webdriver.chrome.service import Service
 from pages.main_page import Main_page
 from pages.smartphones_phototechnics_page import Smartphones_phototechnics_page
 from pages.smartphones_gadgets_page import Smartphones_gadgets_page
+from pages.smartphones_page import Smartphones_page
 
 
 CHROMEDRIVE_PATH = "utils/chromedriver.exe"
 
 
-def test_buy_smartphone(set_group, set_up):
+def test_buy_smartphone_1(set_group, set_up):
     options = webdriver.ChromeOptions()
     options.add_argument('--ignore-certificate-errors')
     options.add_argument('--ignore-ssl-errors')
@@ -25,5 +26,8 @@ def test_buy_smartphone(set_group, set_up):
 
     smartphones_gadgets_page = Smartphones_gadgets_page(driver)
     smartphones_gadgets_page.select_smartphones()
+
+    smartphones_page = Smartphones_page(driver)
+    smartphones_page.select_smartphone_1()
 
     # driver.quit()

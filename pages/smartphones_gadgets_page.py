@@ -4,6 +4,11 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
+"""Локаторы"""
+
+SMARTPHONES_BUTTON_LOCATOR = "//a[@href='/catalog/17a8a01d16404e77/smartfony/'][@class='subcategory__item ui-link ui-link_blue']"
+
+
 class Smartphones_gadgets_page(Base):
 
     def __init__(self, driver):
@@ -11,15 +16,10 @@ class Smartphones_gadgets_page(Base):
         self.driver = driver
 
 
-    """Локаторы"""
-
-    smartphones_button_locator = "//a[@href='/catalog/17a8a01d16404e77/smartfony/'][@class='subcategory__item ui-link ui-link_blue']"
-
-
     """Геттеры"""
 
     def get_smartphones_button(self):
-        return WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, self.smartphones_button_locator)))
+        return WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, SMARTPHONES_BUTTON_LOCATOR)))
 
 
     """Действия"""
