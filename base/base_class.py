@@ -1,4 +1,6 @@
+import time
 import datetime
+from selenium.webdriver.common.action_chains import ActionChains
 
 
 class Base():
@@ -35,7 +37,17 @@ class Base():
     """Метод полной прогрузки страницы"""
 
     def load_page(self):
+        time.sleep(1)
         counter = 100
-        for _ in range(50):
+        for _ in range(20):
+            time.sleep(0.02)
             self.driver.execute_script(f'window.scrollTo(0, {counter})')
-            counter += 200
+            counter += 100
+        time.sleep(1)
+    
+
+    """Метод перемещения страницы к указанному элементу"""
+
+    def move_to_element(self, element_locator, current_driver):
+        action = ActionChains(current_driver)
+        action.move_to_element(element_locator).perform()

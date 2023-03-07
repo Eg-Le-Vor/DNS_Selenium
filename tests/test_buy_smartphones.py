@@ -28,6 +28,7 @@ def test_buy_smartphone_1(set_group, set_up):
     smartphones_gadgets_page.select_smartphones()
 
     smartphones_page = Smartphones_page(driver)
-    smartphones_page.select_smartphone_1()
+    smartphone_name, smartphone_price = smartphones_page.select_smartphone_1()
+    print(smartphone_name, smartphone_price)
 
     # driver.quit()
