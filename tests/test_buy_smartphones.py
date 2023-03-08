@@ -1,3 +1,4 @@
+import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from pages.main_page import Main_page
@@ -10,6 +11,7 @@ from pages.cart_page import Cart_page
 CHROMEDRIVE_PATH = "utils/chromedriver.exe"
 
 
+@pytest.mark.run(order=1)
 def test_buy_smartphone_1(set_group, set_up):
     options = webdriver.ChromeOptions()
     options.add_argument('--ignore-certificate-errors')
@@ -38,6 +40,7 @@ def test_buy_smartphone_1(set_group, set_up):
 
     driver.quit()
 
+@pytest.mark.run(order=2)
 def test_buy_smartphone_2(set_group, set_up):
     options = webdriver.ChromeOptions()
     options.add_argument('--ignore-certificate-errors')
