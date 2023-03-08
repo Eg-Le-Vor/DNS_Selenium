@@ -4,6 +4,7 @@ from pages.main_page import Main_page
 from pages.smartphones_phototechnics_page import Smartphones_phototechnics_page
 from pages.smartphones_gadgets_page import Smartphones_gadgets_page
 from pages.smartphones_page import Smartphones_page
+from pages.cart_page import Cart_page
 
 
 CHROMEDRIVE_PATH = "utils/chromedriver.exe"
@@ -29,6 +30,13 @@ def test_buy_smartphone_1(set_group, set_up):
 
     smartphones_page = Smartphones_page(driver)
     smartphone_name, smartphone_price = smartphones_page.select_smartphone_1()
-    print(smartphone_name, smartphone_price)
+    smartphone_price = smartphone_price.replace(' ', '')[0:5]
+    smartphone_name = smartphone_name[0:smartphone_name.find('[')].replace(' ', '')
+    # print()
+    # print(smartphone_name)
+    # print()
+
+    cart_page = Cart_page(driver, smartphone_name, smartphone_price)
+    cart_page.finish()
 
     # driver.quit()
