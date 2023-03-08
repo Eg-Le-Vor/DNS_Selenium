@@ -29,6 +29,8 @@ MIN_PRICE_1 = "10000"
 MAX_PRICE_1 = "50000"
 
 
+"""Класс страницы выбора смартфона по фильтрам"""
+
 class Smartphones_page(Base):
 
     def __init__(self, driver):

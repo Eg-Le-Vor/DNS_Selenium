@@ -12,9 +12,11 @@ SMARTPHONE_NAME_LOCATOR = "/html/body/div/div[1]/div[2]/div/div/div[1]/div/div/d
 SMARTPHONE_PRICE_LOCATOR = "/html/body/div/div[1]/div[2]/div/div/div[1]/div/div/div/div/div[1]/div[1]/div[3]/div/div[1]/div[1]/span[2]"
 
 
+"""Класс страницы корзины"""
+
 class Cart_page(Base):
 
-    def __init__(self, driver, check_name, check_price):
+    def __init__(self, driver, check_name, check_price):  # Данные переменные добавлены с целью проверки совпадения названия и цены продукта в корзине и на странице выбора товара
         super().__init__(driver)
         self.driver = driver
         self.check_name = check_name

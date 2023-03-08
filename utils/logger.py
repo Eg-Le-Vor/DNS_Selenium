@@ -6,13 +6,21 @@ LOGS_PATH = "../logs/log_"
 LOGS_EXT = ".log"
 
 
+"""Класс логгирования"""
+
 class Logger():
     file_name = LOGS_PATH + str(datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')) + LOGS_EXT
+
+
+    """Метод записи лога в файл"""
 
     @classmethod
     def write_log_to_file(cls, data: str):
         with open(cls.file_name, 'a', encoding='utf=8') as logger_file:
             logger_file.write(data)
+
+
+    """Метод начала записи лога"""
 
     @classmethod
     def add_start_step(cls, method: str):
@@ -25,6 +33,9 @@ class Logger():
         data_to_add += "\n"
 
         cls.write_log_to_file(data_to_add)
+
+
+    """Метод окончания записи лога"""
 
     @classmethod
     def add_end_step(cls, url: str, method: str):

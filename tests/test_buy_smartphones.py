@@ -14,7 +14,7 @@ CHROMEDRIVE_PATH = "utils/chromedriver.exe"
 
 @pytest.mark.run(order=1)
 @allure.description("Покупка смартфона №1")
-def test_buy_smartphone_1(set_group, set_up):
+def test_buy_smartphone_1(set_group, set_up):  # Тест №1 - выбор самого популярного смартфона производителя Xiaomi стоимостью от 10000 до 50000, на который есть обзор, скидка, а также подтверждение его надёжности
     options = webdriver.ChromeOptions()
     options.add_argument('--ignore-certificate-errors')
     options.add_argument('--ignore-ssl-errors')
@@ -42,9 +42,10 @@ def test_buy_smartphone_1(set_group, set_up):
 
     driver.quit()
 
+
 @pytest.mark.run(order=2)
 @allure.description("Покупка смартфона №2")
-def test_buy_smartphone_2(set_group, set_up):
+def test_buy_smartphone_2(set_group, set_up):  # Тест №2 - выбор смартфона с лучшей оценкой производителя realme стоимостью от 10000 до 50000, на который есть обзор, скидка, а также подтверждение его надёжности
     options = webdriver.ChromeOptions()
     options.add_argument('--ignore-certificate-errors')
     options.add_argument('--ignore-ssl-errors')

@@ -3,6 +3,8 @@ import datetime
 from selenium.webdriver.common.action_chains import ActionChains
 
 
+"""Базовый класс необходимый для создания любого класса страницы"""
+
 class Base():
 
     def __init__(self, driver):

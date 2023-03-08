@@ -11,6 +11,8 @@ from utils.logger import Logger
 SMARTPHONES_PHOTOTECHNICS_BUTTON_LOCATOR = "//a[@href='/catalog/17a890dc16404e77/smartfony-i-fototexnika/'][@class='catalog-menu__root-item-info catalog-menu__root-item-title']"
 
 
+"""Класс начальной страницы"""
+
 class Main_page(Base):
 
     def __init__(self, driver):

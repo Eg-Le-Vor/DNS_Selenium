@@ -11,6 +11,8 @@ from utils.logger import Logger
 SMARTPHONES_BUTTON_LOCATOR = "//a[@href='/catalog/17a8a01d16404e77/smartfony/'][@class='subcategory__item ui-link ui-link_blue']"
 
 
+"""Класс страницы раздела смартфонов и гаджетов"""
+
 class Smartphones_gadgets_page(Base):
 
     def __init__(self, driver):
