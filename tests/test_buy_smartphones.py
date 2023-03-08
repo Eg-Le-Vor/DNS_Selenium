@@ -1,4 +1,5 @@
 import pytest
+import allure
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from pages.main_page import Main_page
@@ -12,6 +13,7 @@ CHROMEDRIVE_PATH = "utils/chromedriver.exe"
 
 
 @pytest.mark.run(order=1)
+@allure.description("Покупка смартфона №1")
 def test_buy_smartphone_1(set_group, set_up):
     options = webdriver.ChromeOptions()
     options.add_argument('--ignore-certificate-errors')
@@ -41,6 +43,7 @@ def test_buy_smartphone_1(set_group, set_up):
     driver.quit()
 
 @pytest.mark.run(order=2)
+@allure.description("Покупка смартфона №2")
 def test_buy_smartphone_2(set_group, set_up):
     options = webdriver.ChromeOptions()
     options.add_argument('--ignore-certificate-errors')

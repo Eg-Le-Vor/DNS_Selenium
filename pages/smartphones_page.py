@@ -1,4 +1,5 @@
 import time
+import allure
 from base.base_class import Base
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -169,47 +170,49 @@ class Smartphones_page(Base):
     def select_smartphone_1(self):
         self.check_u = "https://www.dns-shop.ru/catalog/17a8a01d16404e77/smartfony/"
 
-        Logger.add_start_step(method='select_smartphone_1')
-        self.load_page()
-        self.get_current_url()
-        self.check_url(self.check_u)
-        self.click_review_checkbox_button()
-        self.fill_min_price_field(MIN_PRICE_1)
-        self.fill_max_price_field(MAX_PRICE_1)
-        self.click_discounts_checkbox_button()
-        self.click_xiaomi_checkbox_button()
-        self.click_reliable_models_checkbox_button()
-        self.click_apply_filters_button()
-        self.click_sorting_method_button()
-        self.click_popular_checkbox_button()
-        time.sleep(2)
-        first_smartphone_name, first_smartphone_price = self.get_first_smartphone_name().text, self.get_first_smartphone_price().text
-        self.click_first_smartphone_buy_button()
-        self.click_to_cart_button()
-        Logger.add_end_step(url=self.driver.current_url, method='select_smartphone_1')
+        with allure.step('select_smartphone_1'):
+            Logger.add_start_step(method='select_smartphone_1')
+            self.load_page()
+            self.get_current_url()
+            self.check_url(self.check_u)
+            self.click_review_checkbox_button()
+            self.fill_min_price_field(MIN_PRICE_1)
+            self.fill_max_price_field(MAX_PRICE_1)
+            self.click_discounts_checkbox_button()
+            self.click_xiaomi_checkbox_button()
+            self.click_reliable_models_checkbox_button()
+            self.click_apply_filters_button()
+            self.click_sorting_method_button()
+            self.click_popular_checkbox_button()
+            time.sleep(2)
+            first_smartphone_name, first_smartphone_price = self.get_first_smartphone_name().text, self.get_first_smartphone_price().text
+            self.click_first_smartphone_buy_button()
+            self.click_to_cart_button()
+            Logger.add_end_step(url=self.driver.current_url, method='select_smartphone_1')
 
         return first_smartphone_name, first_smartphone_price
     
     def select_smartphone_2(self):
         self.check_u = "https://www.dns-shop.ru/catalog/17a8a01d16404e77/smartfony/"
 
-        Logger.add_start_step(method='select_smartphone_2')
-        self.load_page()
-        self.get_current_url()
-        self.check_url(self.check_u)
-        self.click_review_checkbox_button()
-        self.fill_min_price_field(MIN_PRICE_1)
-        self.fill_max_price_field(MAX_PRICE_1)
-        self.click_discounts_checkbox_button()
-        self.click_realme_checkbox_button()
-        self.click_reliable_models_checkbox_button()
-        self.click_apply_filters_button()
-        self.click_sorting_method_button()
-        self.click_best_score_checkbox_button()
-        time.sleep(2)
-        first_smartphone_name, first_smartphone_price = self.get_first_smartphone_name().text, self.get_first_smartphone_price().text
-        self.click_first_smartphone_buy_button()
-        self.click_to_cart_button()
-        Logger.add_end_step(url=self.driver.current_url, method='select_smartphone_2')
+        with allure.step('select_smartphone_2'):
+            Logger.add_start_step(method='select_smartphone_2')
+            self.load_page()
+            self.get_current_url()
+            self.check_url(self.check_u)
+            self.click_review_checkbox_button()
+            self.fill_min_price_field(MIN_PRICE_1)
+            self.fill_max_price_field(MAX_PRICE_1)
+            self.click_discounts_checkbox_button()
+            self.click_realme_checkbox_button()
+            self.click_reliable_models_checkbox_button()
+            self.click_apply_filters_button()
+            self.click_sorting_method_button()
+            self.click_best_score_checkbox_button()
+            time.sleep(2)
+            first_smartphone_name, first_smartphone_price = self.get_first_smartphone_name().text, self.get_first_smartphone_price().text
+            self.click_first_smartphone_buy_button()
+            self.click_to_cart_button()
+            Logger.add_end_step(url=self.driver.current_url, method='select_smartphone_2')
 
         return first_smartphone_name, first_smartphone_price

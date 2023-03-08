@@ -1,4 +1,4 @@
-import time
+import allure
 from base.base_class import Base
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -46,10 +46,11 @@ class Cart_page(Base):
     def finish(self):
         self.check_u = "https://www.dns-shop.ru/cart/"
 
-        Logger.add_start_step(method='finish')
-        self.get_current_url()
-        self.check_url(self.check_u)
-        self.check_smartphone_name()
-        self.check_smartphone_price()
-        self.get_screenshot()
-        Logger.add_end_step(url=self.driver.current_url, method='finish')
+        with allure.step('finish'):
+            Logger.add_start_step(method='finish')
+            self.get_current_url()
+            self.check_url(self.check_u)
+            self.check_smartphone_name()
+            self.check_smartphone_price()
+            self.get_screenshot()
+            Logger.add_end_step(url=self.driver.current_url, method='finish')

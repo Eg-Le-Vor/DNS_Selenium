@@ -1,3 +1,4 @@
+import allure
 from base.base_class import Base
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -35,8 +36,9 @@ class Smartphones_phototechnics_page(Base):
     def select_smartphones_gadgets(self):
         self.check_u = "https://www.dns-shop.ru/catalog/17a890dc16404e77/smartfony-i-fototexnika/"
 
-        Logger.add_start_step(method='select_smartphones_gadgets')
-        self.get_current_url()
-        self.check_url(self.check_u)
-        self.click_smartphones_gadgets_button()
-        Logger.add_end_step(url=self.driver.current_url, method='select_smartphones_gadgets')
+        with allure.step('select_smartphones_gadgets'):
+            Logger.add_start_step(method='select_smartphones_gadgets')
+            self.get_current_url()
+            self.check_url(self.check_u)
+            self.click_smartphones_gadgets_button()
+            Logger.add_end_step(url=self.driver.current_url, method='select_smartphones_gadgets')
