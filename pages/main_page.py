@@ -2,6 +2,7 @@ from base.base_class import Base
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from utils.logger import Logger
 
 
 """Локаторы"""
@@ -33,8 +34,10 @@ class Main_page(Base):
     """Методы"""
 
     def select_smartphones_phototechnics(self):
+        Logger.add_start_step(method='select_smartphones_phototechnics')
         self.driver.get(self.url)
         self.driver.maximize_window()
         self.get_current_url()
         self.check_url(self.url)
         self.click_smartphones_phototechnics_button()
+        Logger.add_end_step(url=self.driver.current_url, method='select_smartphones_phototechnics')

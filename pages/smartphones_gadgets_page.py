@@ -2,6 +2,7 @@ from base.base_class import Base
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from utils.logger import Logger
 
 
 """Локаторы"""
@@ -34,6 +35,8 @@ class Smartphones_gadgets_page(Base):
     def select_smartphones(self):
         self.check_u = "https://www.dns-shop.ru/catalog/af47fe7c3bae7fd7/smartfony-i-gadzhety/"
 
+        Logger.add_start_step(method='select_smartphones')
         self.get_current_url()
         self.check_url(self.check_u)
         self.click_smartphones_button()
+        Logger.add_end_step(url=self.driver.current_url, method='select_smartphones')
