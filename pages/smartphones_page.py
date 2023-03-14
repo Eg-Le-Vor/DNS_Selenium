@@ -9,8 +9,8 @@ from utils.logger import Logger
 
 """Локаторы"""
 
-MIN_PRICE_FIELD_LOCATOR = "//input[@class='ui-input-small__input ui-input-small__input_list'][@placeholder='от 2 999']"
-MAX_PRICE_FIELD_LOCATOR = "//input[@class='ui-input-small__input ui-input-small__input_list'][@placeholder='до 169 299']"
+MIN_PRICE_FIELD_LOCATOR = "/html/body/div[2]/div/div[2]/div[1]/div/div[3]/div[1]/div[4]/div/div/div[1]/input"
+MAX_PRICE_FIELD_LOCATOR = "/html/body/div[2]/div/div[2]/div[1]/div/div[3]/div[1]/div[4]/div/div/div[2]/input"
 DISCOUNTS_CHECKBOX_BUTTON_LOCATOR = "//label[@class='ui-checkbox ui-checkbox_list']//input[@value='tovarysoskidkoj']//following-sibling::span"
 XIAOMI_CHECKBOX_BUTTON_LOCATOR = "//label[@class='ui-checkbox ui-checkbox_list']//input[@value='xiaomi']//following-sibling::span"
 REALME_CHECKBOX_BUTTON_LOCATOR = "//label[@class='ui-checkbox ui-checkbox_list']//input[@value='realme']//following-sibling::span"
